@@ -2,7 +2,7 @@
 
 ## 1. Project Overview
 
-**ESD-Predictor** is a lightweight, Browser/Server (B/S) architecture-based online early warning and evaluation tool for Electrostatic Discharge (ESD) parameters. This system is designed to bridge the gap between underlying algorithmic research and practical Electromagnetic Compatibility (EMC) engineering applications by encapsulating complex feature extraction pipelines and high-dimensional predictive models in the cloud.
+**ESD-Predictor** is a lightweight, Browser/Server (B/S) architecture-based online early warning and evaluation tool for Electrostatic Discharge (ESD) parameters. This system is designed to bridge the gap between underlying algorithmic research and practical Electromagnetic Compatibility (EMC) engineering applications by encapsulating complex feature extraction pipelines and high-dimensional predictive models in a localized web service.
 
 Users simply upload raw dynamic discharge current waveform files (in CSV format) via the front-end interface. The server automatically executes early truncation, denoising, multi-dimensional feature extraction, and tensor reconstruction. Utilizing built-in machine learning and deep temporal networks, the system achieves high-precision proactive prediction of the "Peak Current" and "Rise Rate" during the very early stages of the discharge event.
 
@@ -36,12 +36,13 @@ The system adopts a front-end and back-end separation design, ensuring cross-pla
 * **Page Structure & Styling:** `HTML5`, `Bootstrap 5` (Responsive UI and card-based layout)
 * **Interactive Logic:** Native `JavaScript` (Dynamic DOM rendering and AJAX asynchronous communication)
 
-## 4. Usage Guide
+## 4. Installation & Usage Guide
 
-1. **Access the Dashboard:** Navigate to the deployed URL via a web browser to enter the ESD-Predictor console.
-2. **Load Waveform Data:** Click "Choose CSV files" to select single or multiple waveform data files captured by testing equipment. *(Requirement: Column 4 must be the time axis, and Column 5 must be the current amplitude).*
-3. **Configure Prediction Parameters:**
-   * Select the desired underlying predictive algorithm (SVM / RF / LSTM / CNN) from the `Choose Model Method` dropdown menu.
-   * Select the corresponding data scaling baseline (StandardScaler / MinMaxScaler) from the `Choose Normalization Method` dropdown menu.
-4. **Execute Online Inference:** Click the "Upload and Predict" button.
-5. **Analyze Results:** The system will automatically generate a "Prediction Results" data table at the bottom of the page, displaying the detailed feature parsing for each file alongside the final `Predicted Peak Value` and `Predicted Rise Rate`.
+This tool is designed to be run as a local web service. Please follow the instructions below to configure the environment and start the application.
+
+### 4.1 Local Environment Setup
+
+1. **Download the Repository:** Clone the project from GitHub (or download the ZIP file and extract it).
+   ```bash
+   git clone <your-github-repo-url>
+   cd <repository-folder-name>
